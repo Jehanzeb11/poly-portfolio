@@ -43,3 +43,13 @@ button.btn.ac_btn:hover {
         transform: translateX(100%);
     }
 }
+
+.smWidth{
+    width: 50%;
+}
+
+@media only screen and (max-width: 768px){    
+    .smWidth{
+        width: 100%;
+    }
+}
