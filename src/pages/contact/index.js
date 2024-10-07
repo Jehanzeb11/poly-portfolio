@@ -5,6 +5,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
+import imageContact from "../../assets/images/contact-img.jpg"
 
 export const ContactUs = () => {
   const [formData, setFormdata] = useState({
@@ -95,6 +96,10 @@ export const ContactUs = () => {
           <Col lg="5" className="mb-5">
             <h3 className="color_sec py-4">Get in touch</h3>
             <address>
+             
+              <p className="pb-2">
+                <strong>Name:</strong>{" "} Poly Master
+              </p>
               <strong>Email:</strong>{" "}
               <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
                 {contactConfig.YOUR_EMAIL}
@@ -108,10 +113,13 @@ export const ContactUs = () => {
               ) : (
                 ""
               )}
+              <p>
+                  <strong>Address:</strong> Street 404 Block 7b Manhattan
+                </p>
             </address>
             <p>{contactConfig.description}</p>
           </Col>
-          <Col lg="7" className="d-flex align-items-center">
+          {/* <Col lg="7" className="d-flex align-items-center">
             <form onSubmit={handleSubmit} className="contact__form w-100">
               <Row>
                 <Col lg="6" className="form-group">
@@ -158,7 +166,11 @@ export const ContactUs = () => {
                 </Col>
               </Row>
             </form>
-          </Col>
+          </Col> */}
+           <Col lg="7" className="d-flex">
+           <img src={imageContact} className="img-fluid smWidth" style={{objectFit:"contain"}}/>
+           </Col>
+           
         </Row>
       </Container>
       <div className={formData.loading ? "loading-bar" : "d-none"}></div>
